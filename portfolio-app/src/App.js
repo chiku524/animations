@@ -1,6 +1,6 @@
 import './css/App.css';
 import React, {useState, useRef, useLayoutEffect, useEffect} from 'react';
-import { gsap } from 'gsap';
+import { gsap, random } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ReactComponent as SVG1 } from './svg/engineering-team.svg';
 import { ReactComponent as SVG2 } from './svg/dog-walking.svg';
@@ -83,22 +83,21 @@ function App() {
   useLayoutEffect(() => {
    
     bubArray.forEach(x => {
-      let widthb = Math.round(Math.random() * (800 - 0 + 1) + 1);
-      let heightb = Math.round(Math.random() * (500 - 0 + 1) + 1);
-      let drifty = Math.round(Math.random() * (700 - 0 + 1) + 1);
-      let driftx = Math.round(Math.random() * (1000 - 0 + 1) + 1);
       gsap.set((`.bubble-${x}`), {
         position: 'absolute',
-        x: widthb,
-        y: heightb
+        x: gsap.utils.random(0, 500),
+        y: gsap.utils.random(0, 500)
       })
-      gsap.to(`.bubble-${x}`, {
-        y: drifty,
-        x: driftx,
-        duration: 7,
-        repeat: -1,
-        yoyoEase: true,
-        transitionTimingFunction: 'ease-out'
+
+      let btl = gsap.timeline()
+      btl.to(`.bubble-${x}`, {
+        y: gsap.utils.random(0, 500),
+        x: gsap.utils.random(0, 500),
+        duration: 3,
+        yoyo: true,
+        repeat: 1,
+        repeatRefresh: true,
+        onComplete: () => {btl.invalidate(); btl.restart(true)}
       })
   })
 
