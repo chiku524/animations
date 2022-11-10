@@ -67,13 +67,30 @@ html {
     }
 }
 
-.svg-column {
-    margin-left: 50px;
-    display: flex;
-    flex-direction: column;
-}
 .dogwalk {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     height: 2000px;
+    margin-top: 150px;
+    justify-content: space-between;
+
+    .tank {
+        border: 1px solid black;
+        width: 800px;
+        height: 500px;
+        margin-left: 5%;
+        box-shadow: 0px 0px 10px 10px rgb(212, 208, 208);
+        background:rgb(5, 108, 226);
+        overflow: hidden;
+        position: relative;
+
+        .bubble {
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            background: transparent;
+            border: 1px solid rgb(36, 36, 37);
+            content: '';
+            box-shadow: 0px 0px 10px 10px rgb(119, 119, 201);
+        }
+    }
 }

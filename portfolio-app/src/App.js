@@ -1,11 +1,12 @@
 import './css/App.css';
-import React, {useState, useRef, useLayoutEffect} from 'react';
+import React, {useState, useRef, useLayoutEffect, useEffect} from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ReactComponent as SVG1 } from './svg/engineering-team.svg';
 import { ReactComponent as SVG2 } from './svg/dog-walking.svg';
 
 function App() {
+  const [bubArray, setBubArray] = useState([]);
 
   gsap.registerPlugin(ScrollTrigger);
   
@@ -52,9 +53,8 @@ function App() {
       scrollTrigger: {
         trigger: ".dogwalk",
         start: "top center",
-        end: "+=400",
+        end: "+=350",
         markers: true,
-        onEnter: ({progress, direction, isActive}) => console.log(progress, direction, isActive),
         scrub: 1,
       } 
     });
@@ -74,6 +74,37 @@ function App() {
   }, [])
   
 
+  for(let i=0; i<50; i++) {
+    bubArray.push(i);
+  }
+
+  console.log(bubArray)
+
+  useLayoutEffect(() => {
+   
+    bubArray.forEach(x => {
+      let widthb = Math.round(Math.random() * (800 - 0 + 1) + 1);
+      let heightb = Math.round(Math.random() * (500 - 0 + 1) + 1);
+      let drifty = Math.round(Math.random() * (700 - 0 + 1) + 1);
+      let driftx = Math.round(Math.random() * (1000 - 0 + 1) + 1);
+      gsap.set((`.bubble-${x}`), {
+        position: 'absolute',
+        x: widthb,
+        y: heightb
+      })
+      gsap.to(`.bubble-${x}`, {
+        y: drifty,
+        x: driftx,
+        duration: 7,
+        repeat: -1,
+        yoyoEase: true,
+        transitionTimingFunction: 'ease-out'
+      })
+  })
+
+  }, [])
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -85,6 +116,9 @@ function App() {
         <div className='icon-scroll'></div>
         <SVG1 className="eteam-svg"/>
         <section className='dogwalk'>
+          <div className="tank">
+            {bubArray ? bubArray.map((item, index) => <div className={`bubble bubble-${index}`} style={{width: index}}> </div>) : console.log('didnt work')}
+          </div>
           <SVG2 className="dogwalk-svg" />
         </section>
       </header>

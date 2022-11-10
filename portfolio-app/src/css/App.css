@@ -71,13 +71,28 @@ html .icon-scroll:before {
     opacity: 1;
   }
 }
-.svg-column {
-  margin-left: 50px;
-  display: flex;
-  flex-direction: column;
-}
 .dogwalk {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   height: 2000px;
+  margin-top: 150px;
+  justify-content: space-between;
+}
+.dogwalk .tank {
+  border: 1px solid black;
+  width: 800px;
+  height: 500px;
+  margin-left: 5%;
+  box-shadow: 0px 0px 10px 10px #d4d0d0;
+  background: #056ce2;
+  overflow: hidden;
+  position: relative;
+}
+.dogwalk .tank .bubble {
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid #242425;
+  content: '';
+  box-shadow: 0px 0px 10px 10px #7777c9;
 }
