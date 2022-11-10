@@ -68,7 +68,7 @@ function App() {
       stagger: {amount: 0.2}
     })
     .from("#person-dog", {
-      x: 200,
+      x: 300,
       duration: 4
     })
   }, [])
