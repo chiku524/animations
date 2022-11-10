@@ -52,19 +52,24 @@ function App() {
       scrollTrigger: {
         trigger: ".dogwalk",
         start: "top center",
-        end: "bottom center",
-        toggleActions: "play pause resume reset",
+        end: "+=400",
         markers: true,
-        onEnter: ({progress, direction, isActive}) => console.log(progress, direction, isActive)
+        onEnter: ({progress, direction, isActive}) => console.log(progress, direction, isActive),
+        scrub: 1,
       } 
     });
 
     dogwalkTL
-    .from("#dogwalk", {
+    .from("#fire-hydren, #person-dog", {
       duration: 1,
       opacity: 0,
       scale: 0,
-      transformOrigin: "50% 50%"
+      transformOrigin: "50% 50%",
+      stagger: {amount: 0.2}
+    })
+    .from("#person-dog", {
+      x: 200,
+      duration: 4
     })
   }, [])
   

@@ -79,4 +79,5 @@ html .icon-scroll:before {
 .dogwalk {
   display: flex;
   flex-direction: row-reverse;
+  height: 2000px;
 }
