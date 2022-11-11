@@ -82,22 +82,21 @@ function App() {
 
   useLayoutEffect(() => {
    
-    bubArray.forEach(x => {
-      gsap.set((`.bubble-${x}`), {
+    bubArray.forEach(el => {
+      gsap.set((`.bubble-${el}`), {
         position: 'absolute',
         x: gsap.utils.random(0, 500),
-        y: gsap.utils.random(0, 500)
+        y: gsap.utils.random(0, 800)
       })
 
-      let btl = gsap.timeline()
-      btl.to(`.bubble-${x}`, {
-        y: gsap.utils.random(0, 500),
-        x: gsap.utils.random(0, 500),
-        duration: 3,
+      gsap.to(`.bubble-${el}`, {
+        x: "random(-100, 900)",
+        y: "random(-100, 500)",
+        duration: 5,
         yoyo: true,
-        repeat: 1,
+        repeat: -1,
         repeatRefresh: true,
-        onComplete: () => {btl.invalidate(); btl.restart(true)}
+        ease: "Power.out"
       })
   })
 
