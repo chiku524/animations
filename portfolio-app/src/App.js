@@ -78,8 +78,6 @@ function App() {
     bubArray.push(i);
   }
 
-  console.log(bubArray)
-
   useLayoutEffect(() => {
    
     bubArray.forEach(el => {
@@ -96,12 +94,29 @@ function App() {
         yoyo: true,
         repeat: -1,
         repeatRefresh: true,
-        ease: "Power.out"
+        ease: "Power3.out"
       })
   })
 
   }, [])
 
+  useEffect(() => {
+    let bubbles = document.querySelectorAll(".bubble");
+
+    const onMouseOverBub = (e, idx, stew) => {
+      console.log(e)
+      console.log(stew)
+      
+      gsap.to(`.bubble-${idx}`, {
+        x: (stew.x + e.pageX) / 360,
+        y: (stew.y + e.pageY) / 360,
+        duration: 5
+      })
+    }
+    bubbles.forEach((el, idx) => {let stew = el.getBoundingClientRect(); el.addEventListener("mouseenter", (e) => onMouseOverBub(e, idx, stew))});
+    
+  }, [])
+  
 
   return (
     <div className="App">
