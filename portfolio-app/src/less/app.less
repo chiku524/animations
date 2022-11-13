@@ -70,9 +70,18 @@ html {
 .dogwalk {
     display: flex;
     flex-direction: row;
-    height: 2000px;
+    height: auto;
     margin-top: 150px;
     justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 500px;
+
+    .tank-container, .dog-svg-container, .anim-title-container {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
     .tank {
         border: 1px solid black;
@@ -90,6 +99,29 @@ html {
             background: transparent;
             border: 1px solid rgb(36, 36, 37);
             box-shadow: 0px 0px 10px 10px rgb(119, 119, 201);
+        }
+    }
+
+    .anim-title-container {
+        margin: 50px auto;
+        width: 100%;
+
+        .title {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 3em;
+
+            .half {
+                width: 75%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                height: 100px;
+            }
         }
     }
 }

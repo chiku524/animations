@@ -74,9 +74,19 @@ html .icon-scroll:before {
 .dogwalk {
   display: flex;
   flex-direction: row;
-  height: 2000px;
+  height: auto;
   margin-top: 150px;
   justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 500px;
+}
+.dogwalk .tank-container,
+.dogwalk .dog-svg-container,
+.dogwalk .anim-title-container {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .dogwalk .tank {
   border: 1px solid black;
@@ -94,4 +104,24 @@ html .icon-scroll:before {
   background: transparent;
   border: 1px solid #242425;
   box-shadow: 0px 0px 10px 10px #7777c9;
+}
+.dogwalk .anim-title-container {
+  margin: 50px auto;
+  width: 100%;
+}
+.dogwalk .anim-title-container .title {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+}
+.dogwalk .anim-title-container .title .half {
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
 }
