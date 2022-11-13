@@ -80,33 +80,53 @@ function App() {
         start: "top center",
         end: "+=350",
         markers: true,
-        toggleAttribute: "play none none reverse"
+        toggleAttribute: "play none none reverse",
+        onLeaveBack: "reverse()"
       } 
     });
 
     animTitle
-    .to(".anim-title-container .title", {
-      y: 50,
-      ease: "Power3.easeOut",
-      duration: 0.5
+    .set(".anim-title-container .title .half", {
+      opacity: 0,
+      scale: 0
     })
-    .to("half", {
+    .fromTo(".anim-title-container .title", {
+      y: 50,
+      scale: 0,
+      opacity: 0
+    }, {
+      y: 25,
+      duration: 1,
+      scale: 1,
+      opacity: 1
+    })
+    .fromTo(".half", {
       y: 75,
-      ease: "Power3.easeOut",
-      duration: 0.5
+      scale: 0,
+      opacity: 0
+    }, {
+      y: 45,
+      duration: 1,
+      scale: 1,
+      opacity: 1
     })
     .to(".half h3", {
       stagger: 0.2,
-      y: 25,
-      animationDelay: 2,
-      duration: 0.5,
+      y: -45,
+      duration: 3,
+      animationDelay: 1.5,
       yoyo: true,
       color: "rgb(243, 241, 241)",
       textShadow: "2px 2px 10px rgb(5, 108, 226)",
       boxShadow: "0px 0px 10px #424141",
-      borderRadius: '30%',
-      padding: '10px'
+      borderRadius: '50%',
+      padding: '10px 30px',
+      ease: "elastic",
+      scale: 1,
+      opacity: 1
     })
+
+
   }, [])
   
 
