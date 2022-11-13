@@ -80,7 +80,6 @@ function App() {
         start: "top center",
         end: "+=350",
         markers: true,
-        toggleAttribute: "play none none reverse",
         onLeaveBack: "reverse()"
       } 
     });
