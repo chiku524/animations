@@ -145,32 +145,32 @@ html .icon-scroll:before {
 @keyframes floater {
   0% {
     top: 550px;
-    box-shadow: 0px 0px 10px 10px rgba(212, 208, 208, 0.185);
+    box-shadow: 0px 0px 10px 10px rgba(212, 208, 208, 0.808);
   }
   25% {
-    box-shadow: 0px 0px 10px 10px rgba(207, 59, 59, 0.137);
+    box-shadow: 0px 0px 10px 10px rgba(207, 59, 59, 0.808);
   }
   50% {
-    box-shadow: 0px 0px 10px 10px rgba(226, 223, 33, 0.144);
+    box-shadow: 0px 0px 10px 10px rgba(226, 223, 33, 0.808);
   }
   100% {
     top: -550px;
-    box-shadow: 0px 0px 10px 10px rgba(212, 208, 208, 0.171);
+    box-shadow: 0px 0px 10px 10px rgba(212, 208, 208, 0.808);
   }
 }
 @keyframes floater1 {
   0% {
     top: 550px;
-    box-shadow: 0px 0px 10px 10px rgba(212, 208, 208, 0.171);
+    box-shadow: 0px 0px 10px 10px rgba(212, 208, 208, 0.808);
   }
   25% {
-    box-shadow: 0px 0px 10px 10px rgba(207, 59, 59, 0.103);
+    box-shadow: 0px 0px 10px 10px rgba(207, 59, 59, 0.808);
   }
   50% {
-    box-shadow: 0px 0px 10px 10px rgba(226, 223, 33, 0.151);
+    box-shadow: 0px 0px 10px 10px rgba(226, 223, 33, 0.808);
   }
   100% {
     top: -550px;
-    box-shadow: 0px 0px 10px 10px rgba(212, 208, 208, 0.171);
+    box-shadow: 0px 0px 10px 10px rgba(212, 208, 208, 0.808);
   }
 }
