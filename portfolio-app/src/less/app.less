@@ -98,7 +98,25 @@ html {
             border-radius: 50%;
             background: transparent;
             border: 1px solid rgb(36, 36, 37);
-            box-shadow: 0px 0px 10px 10px rgb(119, 119, 201);
+            animation-name: floater;
+            animation-iteration-count: infinite;
+            animation-duration: 30s;
+            transition: ease;
+            position: absolute;
+        }
+        .bubble:nth-child(even) {
+            animation-name: floater1;
+            animation-iteration-count: infinite;
+            animation-duration: 20s;
+            transition: ease;
+            position: absolute;
+        }
+
+        .tank-copy {
+            text-align: center;
+            margin-top: 200px;
+            text-shadow: 5px 5px 5px rgb(36, 36, 37);
+            color:rgba(207, 204, 17, 0.815);
         }
     }
 
@@ -124,4 +142,17 @@ html {
             }
         }
     }
+}
+
+@keyframes floater {
+    0% {top: 550px; box-shadow: 0px 0px 10px 10px rgba(212, 208, 208, 0.185);}
+    25% {box-shadow: 0px 0px 10px 10px rgba(207, 59, 59, 0.137);}
+    50% {box-shadow: 0px 0px 10px 10px rgba(226, 223, 33, 0.144);}
+    100% {top: -550px; box-shadow: 0px 0px 10px 10px rgba(212, 208, 208, 0.171);}
+}
+@keyframes floater1 {
+    0% {top: 550px; box-shadow: 0px 0px 10px 10px rgba(212, 208, 208, 0.171);}
+    25% {box-shadow: 0px 0px 10px 10px rgba(207, 59, 59, 0.103);}
+    50% {box-shadow: 0px 0px 10px 10px rgba(226, 223, 33, 0.151);}
+    100% {top: -550px; box-shadow: 0px 0px 10px 10px rgba(212, 208, 208, 0.171);}
 }

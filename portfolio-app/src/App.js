@@ -16,7 +16,7 @@ function App() {
       duration: 1,
       repeat: 1,
       color: 'rgb(243, 241, 241)',
-      h3Shadow: '10px 10px 10px blue',
+      textShadow: '10px 10px 10px blue',
       rotateZ: -1,
       yoyo: true
     })
@@ -41,7 +41,6 @@ function App() {
       stagger: { amount: 0.2 }
     })
     .to("#monitor-1, #monitor-2, #monitor-3", {
-      h3Shadow: '3px 3px red, -1em 0 0.4em olive',
       opacity: 1,
       duration: 1,
       scale: 1,
@@ -77,7 +76,7 @@ function App() {
     let animTitle = gsap.timeline({
       scrollTrigger: {
         trigger: ".anim-title-container",
-        start: "top center",
+        start: "-=150",
         end: "+=350",
         markers: true,
         onLeaveBack: "reverse()"
@@ -116,7 +115,6 @@ function App() {
       animationDelay: 1.5,
       yoyo: true,
       color: "rgb(243, 241, 241)",
-      textShadow: "2px 2px 10px rgb(5, 108, 226)",
       boxShadow: "0px 0px 10px #424141",
       borderRadius: '50%',
       padding: '10px 30px',
@@ -124,51 +122,55 @@ function App() {
       scale: 1,
       opacity: 1
     })
+    .to(".half h3", {
+      keyframes: {
+        boxShadow: ["0px 0px 10px #424141", "0px 0px 15px #e2bd1a", "0px 0px 20px #29f176", "0px 0px 20px rgb(41, 128, 241)", "0px 0px 15px #c418bb", "0px 0px 10px #424141"],
+      },
+      repeat: -1,
+      duration: 10,
+    })
 
 
   }, [])
   
 
-  for(let i=0; i<50; i++) {
+  for(let i=0; i<75; i++) {
     bubArray.push(i);
   }
 
   useLayoutEffect(() => {
-   
     bubArray.forEach(el => {
-      gsap.set((`.bubble-${el}`), {
-        position: 'absolute',
-        x: gsap.utils.random(0, 500),
-        y: gsap.utils.random(0, 800)
+      gsap.set(`.bubble-${el}`, {
+        x: "random(0, 800)",
+        y: "random(0, 500)",
       })
-
-      gsap.to(`.bubble-${el}`, {
-        x: "random(-100, 900)",
-        y: "random(-100, 500)",
-        duration: 5,
-        yoyo: true,
-        repeat: -1,
-        repeatRefresh: true,
-        ease: "Power3.out"
-      })
-  })
-
+    })
   }, [])
 
   useEffect(() => {
     let bubbles = document.querySelectorAll(".bubble");
+    let tank = document.querySelector(".tank");
+    var xMove;
+    var yMove;
+    
+    const getMovement = (e) => {
+      xMove = e.movementX;
+      yMove = e.movementY;   
+    }
 
-    const onMouseOverBub = (e, idx, stew) => {
-      console.log(e)
-      console.log(stew)
-      
+    const moveBubble = (e, idx, xMove, yMove) => {;
+      let xMoveDupe = xMove * 10;
+      let yMoveDupe = yMove * 10;
+
       gsap.to(`.bubble-${idx}`, {
-        x: (stew.x + e.pageX) / 360,
-        y: (stew.y + e.pageY) / 360,
-        duration: 5
+        x: `+=${xMoveDupe}`,
+        y: `+=${yMoveDupe}`,
+        duration: 2
       })
     }
-    bubbles.forEach((el, idx) => {let stew = el.getBoundingClientRect(); el.addEventListener("mouseenter", (e) => onMouseOverBub(e, idx, stew))});
+      
+    tank.addEventListener('mousemove', (e) => getMovement(e));
+    bubbles.forEach((el, idx) => el.addEventListener("mouseenter", (e) => moveBubble(e, idx, xMove, yMove)));
     
   }, [])
   
@@ -186,7 +188,10 @@ function App() {
         <section className='dogwalk'>
           <div className='tank-container'>
             <div className="tank">
-              {bubArray ? bubArray.map((item, index) => <div className={`bubble bubble-${index}`} style={{width: index}}> </div>) : console.log('didnt work')}
+              {bubArray ? bubArray.map((item, index) => <div className={`bubble bubble-${index}`} style={{width: index*1.3}}> </div>) : console.log('didnt work')};
+              <div className='tank-copy'>
+                <h3>MOVE MOUSE TO HIT BUBBLES</h3>
+              </div>
             </div>
           </div>
           <div className='dog-svg-container'>
