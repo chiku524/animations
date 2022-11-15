@@ -51,7 +51,7 @@ function App() {
     let dogwalkTL = gsap.timeline({
       scrollTrigger: {
         trigger: ".dogwalk",
-        start: "top center",
+        start: "-=100 center",
         end: "+=350",
         markers: true,
         scrub: 1,
@@ -72,12 +72,14 @@ function App() {
       duration: 4
     })
 
-    //anim copy title
+  }, [])
+
+  //anim copy title
+  useLayoutEffect(() => {
     let animTitle = gsap.timeline({
       scrollTrigger: {
         trigger: ".anim-title-container",
-        start: "-=225",
-        end: "+=350",
+        start: "-=225 center",
         markers: true
       } 
     });
@@ -85,13 +87,9 @@ function App() {
     animTitle
     .fromTo(".anim-title-container .title", {
       y: 50,
-      scale: 0,
-      opacity: 0
     }, {
       y: 25,
       duration: 1,
-      scale: 1,
-      opacity: 1
     })
     .fromTo(".half", {
       y: 75,
@@ -113,9 +111,7 @@ function App() {
       boxShadow: "0px 0px 10px #424141",
       borderRadius: '50%',
       padding: '10px 30px',
-      ease: "elastic",
-      scale: 1,
-      opacity: 1
+      ease: "elastic"
     })
     .to(".half h3", {
       keyframes: {
@@ -124,8 +120,6 @@ function App() {
       repeat: -1,
       duration: 10,
     })
-
-
   }, [])
   
 
