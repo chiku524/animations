@@ -76,18 +76,13 @@ function App() {
     let animTitle = gsap.timeline({
       scrollTrigger: {
         trigger: ".anim-title-container",
-        start: "-=150",
+        start: "-=225",
         end: "+=350",
-        markers: true,
-        onLeaveBack: "reverse()"
+        markers: true
       } 
     });
 
     animTitle
-    .set(".anim-title-container .title .half", {
-      opacity: 0,
-      scale: 0
-    })
     .fromTo(".anim-title-container .title", {
       y: 50,
       scale: 0,
