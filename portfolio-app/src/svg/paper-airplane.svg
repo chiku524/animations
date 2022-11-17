@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="182" height="110" fill="none">
+  <path fill="#F5F5F5" d="M0 0h182v110H0z"/>
+  <g id="Paper_Airplane 1" clip-path="url(#clip0_0_1)">
+    <g id="Layer_1">
+      <g id="polygon20402">
+        <path id="Vector" fill="#fff" d="m181.312.673-146.11 66.66 10.861 41.994L181.312.673Z"/>
+        <path id="Vector_2" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" d="m181.312.673-146.11 66.66 10.861 41.994L181.312.673Z"/>
+      </g>
+      <g id="polygon20404">
+        <path id="Vector_3" fill="#fff" d="M35.202 67.334.688 46.487 181.312.674l-146.11 66.66Z"/>
+        <path id="Vector_4" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" d="M35.202 67.334.688 46.487 181.312.674l-146.11 66.66Z"/>
+      </g>
+      <g id="polygon20406">
+        <path id="Vector_5" fill="#fff" d="M181.312.673 53.993 76.59l41.66 25.044L181.312.674Z"/>
+        <path id="Vector_6" stroke="#000" stroke-linecap="square" stroke-linejoin="round" stroke-width="5" d="M181.312.673 53.993 76.59l41.66 25.044L181.312.674Z"/>
+      </g>
+      <g id="polygon20408">
+        <path id="Vector_7" fill="#fff" d="M72.767 87.875 53.993 76.59l-7.93 32.737 26.704-21.452Z"/>
+        <path id="Vector_8" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" d="M72.767 87.875 53.993 76.59l-7.93 32.737 26.704-21.452Z"/>
+      </g>
+    </g>
+  </g>
+  <defs>
+    <clipPath id="clip0_0_1">
+      <path fill="#fff" d="M182 0H0v110h182z"/>
+    </clipPath>
+  </defs>
+</svg>

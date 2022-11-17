@@ -1,7 +1,7 @@
 import '../css/home.css';
-import React, {useState, useRef, useLayoutEffect, useEffect} from 'react';
-import { gsap, random } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import React, {useState, useLayoutEffect, useEffect} from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ReactComponent as SVG1 } from '../svg/engineering-team.svg';
 import { ReactComponent as SVG2 } from '../svg/dog-walking.svg';
 
@@ -187,7 +187,7 @@ function App() {
           <div className='anim-title-container'>
             <div className="title">
               <div className='half first'>
-                <h3>HERE</h3>
+                <h3>THESE</h3>
                 <h3>ARE</h3>
                 <h3>SOME</h3>
                 <h3>COOL</h3>
@@ -203,6 +203,9 @@ function App() {
               </div>
             </div>
           </div>
+        </section>
+        <section className='line-plane'>
+          
         </section>
       </header>
     </div>

@@ -238,100 +238,38 @@
 
 
 @keyframes open-flower{
-        0%{
-            transform:  translateX(-50%) rotate(0);
-        }
+        0%{transform:  translateX(-50%) rotate(0);}
 }
 
 @keyframes open-flowe--middle {
-    0%{
-        opacity: 0;
-        transform: translateX(-50%) scale(0);
-    }
+    0%{opacity: 0; transform: translateX(-50%) scale(0);}
 }
 
 @keyframes flower-fall-down-pink {
-
-    0%{
-        transform: rotate(-55deg);
-    }
-
-    50%{
-        transform: rotateX(-100deg);
-    }
-
-    100%{
-        transform:translate(2vmin,28vmin);
-    }
-
+    0%{transform: rotate(-55deg);}
+    50%{transform: rotateX(-100deg);}
+    100%{transform:translate(2vmin,28vmin);}
 }
 
 @keyframes flower-fall-down-yellow {
-
-    0%{
-        transform: rotate(-55deg);
-    }
-
-    50%{
-        bottom: 3vmin;
-        transform: rotateX(-100deg);
-    }
-
-    100%{
-        transform:translate(2vmin,70vmin) rotate(150deg);
-    }
-
+    0%{transform: rotate(-55deg);}
+    50%{bottom: 3vmin; transform: rotateX(-100deg);}
+    100%{transform:translate(2vmin,70vmin) rotate(150deg);}
 }
 
 @keyframes flower-fall-down-purple {
-
-    0%{
-        transform: rotate(-50deg);
-    }
-
-    25%{
-        bottom: 1vmin ;
-        transform: rotateX(-100deg);
-        perspective: 0px;
-    }
-
-    50%{
-        perspective: 0px;
-        transform:translate(-30vmin,2vmin) rotate(90deg);
-    }
-
-    75%{
-        perspective: 0px;
-        transform:translate(-34vmin,-2vmin);
-    }
-
-    100%{
-        transform-origin: center;
-        transform:translate(-34vmin,-2vmin) rotateY(-80deg) rotateX(35deg);
-    }
-
+    0%{transform: rotate(-50deg);}
+    25%{bottom: 1vmin; transform: rotateX(-100deg); perspective: 0px;}
+    50%{perspective: 0px; transform:translate(-30vmin,2vmin) rotate(90deg);}
+    75%{perspective: 0px; transform:translate(-34vmin,-2vmin);}
+    100%{transform-origin: center; transform:translate(-34vmin,-2vmin) rotateY(-80deg) rotateX(35deg);}
 }
 
 @keyframes flower-falling {
-    0%,100%{
-        transform-origin: center;
-        transform:translate(-34vmin,-2vmin) rotateY(-80deg) rotateX(35deg);
-    }
-
-    25%{
-        transform-origin: center;
-        transform:translate(-34.4vmin,-2vmin) rotateY(-84deg) rotateX(35deg);
-    }
-
-    50%{
-        transform-origin: center;
-        transform:translate(-32vmin,-4.2vmin) rotateY(-80deg) rotateX(35deg);
-    }
-
-    75%{
-        transform-origin: center;
-        transform:translate(-36vmin,1.1vmin) rotateY(-80deg) rotateX(35deg);
-    }
+    0%,100%{transform-origin: center; transform:translate(-34vmin,-2vmin) rotateY(-80deg) rotateX(35deg);}
+    25%{transform-origin: center; transform:translate(-34.4vmin,-2vmin) rotateY(-84deg) rotateX(35deg);}
+    50%{transform-origin: center; transform:translate(-32vmin,-4.2vmin) rotateY(-80deg) rotateX(35deg);}
+    75%{transform-origin: center; transform:translate(-36vmin,1.1vmin) rotateY(-80deg) rotateX(35deg);}
 }
 
 .flower-copy {
@@ -341,5 +279,22 @@
     justify-content: center;
     display: flex;
     flex-direction: column;
-    color:#4974c5;
+    color:#88CE02;
+    text-shadow: 3px 3px 3px #4bffc356;
+    background: linear-gradient(rgba(131, 131, 131, 0.363), rgba(145, 142, 142, 0.336));
+    border-radius: 50%;
+    animation-name: flower-border;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    transition: ease;
+    border: 2px solid gold;
+    box-shadow: 0px 0px 10px 3px gold
+  }
+
+  @keyframes flower-border {
+    0% {border: 1px solid gold; box-shadow: 0px 0px 10px 3px gold}
+    25% {border: 1px solid #1a9092; box-shadow: 0px 0px 10px 3px #1a9092}
+    50% {border: 1px solid #1a9220; box-shadow: 0px 0px 10px 3px #1a9220}
+    75% {border: 1px solid #761a92; box-shadow: 0px 0px 10px 3px #761a92}
+    100% {border: 1px solid gold; box-shadow: 0px 0px 10px 3px gold}
   }

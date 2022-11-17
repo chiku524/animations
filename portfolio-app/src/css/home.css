@@ -22,6 +22,9 @@ html h3.page-title {
   left: 20%;
   top: 180px;
 }
+html .eteam-svg {
+  margin-left: 5%;
+}
 html .icon-scroll,
 html .icon-scroll:before {
   position: absolute;
